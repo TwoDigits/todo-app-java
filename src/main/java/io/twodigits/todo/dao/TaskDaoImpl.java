@@ -41,8 +41,8 @@ public class TaskDaoImpl implements TaskDao {
 
 		/**
 		 * TODO:
-		 * - Create/save a Task object in database using DynamoDB mapper
 		 * - Check if "id" is present, otherwise create an unique "id", e.g. using UUID
+		 * - Create/save a Task object in database using DynamoDB mapper
 		 */
 	}
 
@@ -55,5 +55,4 @@ public class TaskDaoImpl implements TaskDao {
 		 * - Check if Task for id exists and delete it using DynamoDB mapper
 		 */
 	}
-
 }

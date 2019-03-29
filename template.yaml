@@ -1,7 +1,7 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: >
-    Simple implementation of a REST API for an imaginary todo app.
+  Simple implementation of a REST API for an imaginary todo app.
 
 Globals:
   Function:
@@ -31,7 +31,7 @@ Resources:
       FunctionName:
         Fn::Sub: todo-app-list-tasks-${StageName}
       CodeUri: target/todo-app-1.0-SNAPSHOT.jar
-      Handler: TaskRequestHandler::listTasks
+      Handler: io.twodigits.todo.handler.TaskRequestHandler::listTasks
       Policies:
         DynamoDBReadPolicy:
           TableName:
@@ -51,7 +51,7 @@ Resources:
       FunctionName:
         Fn::Sub: todo-app-create-task-${StageName}
       CodeUri: target/todo-app-1.0-SNAPSHOT.jar
-      Handler: TaskRequestHandler::createTask
+      Handler: io.twodigits.todo.handler.TaskRequestHandler::createTask
       Policies:
         DynamoDBCrudPolicy:
           TableName:
@@ -71,7 +71,7 @@ Resources:
       FunctionName:
         Fn::Sub: todo-app-get-task-${StageName}
       CodeUri: target/todo-app-1.0-SNAPSHOT.jar
-      Handler: TaskRequestHandler::getTask
+      Handler: io.twodigits.todo.handler.TaskRequestHandler::getTask
       Policies:
         DynamoDBReadPolicy:
           TableName:
@@ -91,7 +91,7 @@ Resources:
       FunctionName:
         Fn::Sub: todo-app-update-task-${StageName}
       CodeUri: target/todo-app-1.0-SNAPSHOT.jar
-      Handler: TaskRequestHandler::updateTask
+      Handler: io.twodigits.todo.handler.TaskRequestHandler::updateTask
       Policies:
         DynamoDBCrudPolicy:
           TableName:
@@ -111,7 +111,7 @@ Resources:
       FunctionName:
         Fn::Sub: todo-app-delete-task-${StageName}
       CodeUri: target/todo-app-1.0-SNAPSHOT.jar
-      Handler: TaskRequestHandler::deleteTask
+      Handler: io.twodigits.todo.handler.TaskRequestHandler::deleteTask
       Policies:
         DynamoDBCrudPolicy:
           TableName:

@@ -34,7 +34,7 @@ import org.apache.http.HttpStatus;
  */
 
 public class TaskRequestHandler {
-	
+
 	private TaskDao dao;
 
 	public void setTaskDao(TaskDao dao) {
@@ -47,7 +47,7 @@ public class TaskRequestHandler {
 		}
 		return this.dao;
 	}
-	
+
 	public APIGatewayProxyResponseEvent listTasks(APIGatewayProxyRequestEvent request, Context context) {
 		List<Task> tasks = this.getTaskDao().listTasks();
 
@@ -71,7 +71,7 @@ public class TaskRequestHandler {
 
 		/**
 		 * TODO:
-		 * - Get json request and map to Task object
+		 * - Get json body request and map to Task object
 		 * - Save task via DAO
 		 * - Return proper status code for CREATED and INTERNAL SERVER ERROR for errors
 		 */
@@ -86,9 +86,9 @@ public class TaskRequestHandler {
 
 		/**
 		 * TODO:
-		 * - Get Task "id" from request
+		 * - Get Task "id" from request path parameter
 		 * - Try to get corresponding Task object for "id"
-		 * - Map Task object to JSON String and return with proper status code
+		 * - Map Task object to JSON String and return with proper header (content-type: application/json) and status code
 		 * - Catch errors and return proper status code (NOT FOUND, INTERNAL SERVER ERROR)
 		 */
 
@@ -102,7 +102,7 @@ public class TaskRequestHandler {
 
 		/**
 		 * TODO:
-		 * - Get json request and map to Task object
+		 * - Get json body from request and map to Task object
 		 * - Save task via DAO
 		 * - Return proper status code OK and INTERNAL SERVER ERROR for errors
 		 */
@@ -117,7 +117,7 @@ public class TaskRequestHandler {
 
 		/**
 		 * TODO:
-		 * - Get Task "id" from request
+		 * - Get Task "id" from request path parameter
 		 * - Delete Task via DAO
 		 * - Return status code OK
 		 */
