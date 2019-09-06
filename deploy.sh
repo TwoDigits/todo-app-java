@@ -1,8 +1,8 @@
 #!/bin/bash
 
 S3_BUCKET=
-INPUT_FILE=sam-template.yaml
-OUTPUT_FILE=sam-template-output.yaml
+INPUT_FILE=template.yaml
+OUTPUT_FILE=template-output.yaml
 STAGE_NAME=dev
 STACK_NAME=todo-app-java-$STAGE_NAME
 
